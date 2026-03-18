@@ -29,7 +29,14 @@ export function MenuScreen({ onNav, stats }: { onNav: (s: Screen) => void; stats
 
       <div className="flex flex-col gap-3 w-full max-w-sm">
         <button className="btn-primary text-lg" onClick={() => onNav("game")}>
-          Новая игра
+          Играть с компьютером
+        </button>
+        <button
+          className="btn-secondary text-base flex items-center justify-center gap-2"
+          onClick={() => onNav("game2p")}
+        >
+          <Icon name="Users" size={18} className="text-orange-400" />
+          Игра вдвоём
         </button>
         <div className="grid grid-cols-2 gap-3">
           {[

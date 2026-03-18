@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Screen, Settings, GameStats, DEF_SETTINGS, DEF_STATS } from "@/types/game";
 import { MenuScreen, SettingsScreen, RatingScreen, StatsScreen, RulesScreen } from "@/components/game/GameScreens";
 import { GameBoard } from "@/components/game/GameBoard";
+import { GameBoardTwoPlayer } from "@/components/game/GameBoardTwoPlayer";
 
 function load<T>(key: string, fallback: T): T {
   try { const d = localStorage.getItem(key); return d ? JSON.parse(d) : fallback; }
@@ -39,6 +40,7 @@ export default function Index() {
 
       {screen === "menu" && <MenuScreen onNav={setScreen} stats={stats} />}
       {screen === "game" && <GameBoard settings={settings} onNav={setScreen} onGameEnd={handleGameEnd} />}
+      {screen === "game2p" && <GameBoardTwoPlayer onNav={setScreen} />}
       {screen === "settings" && <SettingsScreen settings={settings} onUpdate={updateSettings} onBack={() => setScreen("menu")} />}
       {screen === "rating" && <RatingScreen onBack={() => setScreen("menu")} stats={stats} />}
       {screen === "stats" && <StatsScreen stats={stats} onBack={() => setScreen("menu")} />}

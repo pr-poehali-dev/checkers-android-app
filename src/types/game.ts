@@ -1,4 +1,4 @@
-export type Screen = "menu" | "game" | "settings" | "rating" | "stats" | "rules";
+export type Screen = "menu" | "game" | "game2p" | "settings" | "rating" | "stats" | "rules";
 export type PieceColor = "white" | "black";
 export type Difficulty = "beginner" | "easy" | "medium" | "hard" | "master";
 
